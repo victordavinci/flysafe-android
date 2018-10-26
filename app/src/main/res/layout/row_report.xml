@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:text="@string/Date" />
+
+    <TextView
+        android:id="@+id/textViewDateValue"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_row="0"
+        android:text="0000-00-00"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_row="1"
+        android:text="@string/Type" />
+
+    <TextView
+        android:id="@+id/textViewTypeValue"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_row="1"
+        android:text="-"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/textViewLocationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_row="2"
+        android:text="@string/Location" />
+
+    <TextView
+        android:id="@+id/textViewLocationValue"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_row="2"
+        android:text="-"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_row="3"
+        android:text="@string/AircraftsM" />
+
+    <TextView
+        android:id="@+id/textViewRegistrations"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_row="3"
+        android:text=""
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/textViewNarrativeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_row="4"
+        android:text="@string/Narrative" />
+
+    <TextView
+        android:id="@+id/textViewNarrative"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_row="4"
+        android:text=""
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_row="5"
+        android:text="@string/Validated" />
+
+    <TextView
+        android:id="@+id/textViewValidated"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_column="2"
+        android:layout_row="5"
+        android:text=""
+        android:textAlignment="textEnd" />
+</GridLayout>

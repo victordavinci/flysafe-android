@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Stats</title>
+        <style type="text/css">
+            #loading { display: none }
+        </style>
+        <style id="loading-css" type="text/css">
+            #loading { display: block }
+            #page { display: none }
+        </style>
+    </head>
+    <body>
+        <div id="loading">Loading...</div>
+        <div id="page">
+            <canvas id="chart"></canvas>
+            <h3>Total reports: <span id="data"></span></h3>
+        </div>
+        <script src="file:///android_asset/Chart.bundle.min.js"></script>
+        <script>
+            var ctx = document.getElementById("chart").getContext('2d');
+            var chart = null;
+            function updateChart(data) {
+                var hs = [],
+                    labels = [],
+                    dataset = [];
+                for (var k in data["reports-count"]) {
+                    var y = parseInt(k, 10);
+                    if (y < new Date().getFullYear() - 5) continue;
+                    hs.push({"k": y, "v": data["reports-count"][k]});
+                }
+                hs.sort(function(a, b) {
+                    return ((a.k < b.k) ? -1 : ((a.k == b.k) ? 0 : 1));
+                });
+                for (var k = 0; k < hs.length; k++) {
+                    labels[k] = hs[k].k;
+                    dataset[k] = hs[k].v;
+                }
+
+                if (chart != null) {
+                    chart.destroy();
+                }
+                chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: '# of reports',
+                            data: dataset,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        animation: {
+                            duration: 0,
+                        },
+                        hover: {
+                            animationDuration: 0,
+                        },
+                        responsiveAnimationDuration: 0,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        </script>
+        <script>
+            var css = document.getElementById("loading-css");
+            var mod = 0, dataDiv = document.getElementById("data");
+            function x() {
+                var nmod = Android.getModified();
+                if (nmod > mod) {
+                    css.disabled = true;
+                    mod = nmod;
+                    var data = JSON.parse(Android.getData());
+                    dataDiv.textContent = data["report-count"];
+                    dataDiv.innerText = data["report-count"];
+                    updateChart(data);
+                }
+                setTimeout(x, 1000);
+            }
+            x();
+        </script>
+    </body>
+</html>

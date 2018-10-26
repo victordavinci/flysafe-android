@@ -1,0 +1,101 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ar.gob.jiaac.flysafe.fragments.MainMenuFragment"
+    android:padding="8dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:id="@+id/notificationRow">
+            <TextView
+                android:id="@+id/textViewNotification"
+                android:layout_weight="7"
+                android:textSize="16dp"
+                android:height="48dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_weight="6"
+                android:textSize="16dp"
+                android:height="48dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Reports" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/buttonLatestReports"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:srcCompat="@drawable/ic_arrow_button"
+                    android:background="@color/fui_transparent"
+                    android:layout_gravity="end" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow android:layout_marginTop="12dp">
+            <TextView
+                android:layout_weight="6"
+                android:textSize="16dp"
+                android:height="48dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/SafetyRecommendations" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/buttonSafetyRecommendations"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:srcCompat="@drawable/ic_arrow_button"
+                    android:background="@color/fui_transparent"
+                    android:layout_gravity="end" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow android:layout_marginTop="12dp">
+            <TextView
+                android:layout_weight="6"
+                android:textSize="16dp"
+                android:height="48dp"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contact" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/buttonAlerts"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:srcCompat="@drawable/ic_arrow_button"
+                    android:background="@color/fui_transparent"
+                    android:layout_gravity="end" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+</FrameLayout>

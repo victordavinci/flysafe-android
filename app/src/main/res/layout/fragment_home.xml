@@ -1,0 +1,38 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ar.gob.jiaac.flysafe.fragments.HomeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="0"
+    android:padding="0dp"
+    android:layout_margin="0dp">
+
+    <TableRow
+        android:id="@+id/searchRow1"
+        android:visibility="gone">
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:hint="@string/Search" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/searchRow2"
+        android:visibility="gone">
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Search2" />
+    </TableRow>
+
+    <TableRow android:layout_weight="1">
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </TableRow>
+</TableLayout>

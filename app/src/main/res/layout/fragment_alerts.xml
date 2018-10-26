@@ -1,0 +1,46 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ar.gob.jiaac.flysafe.fragments.AlertsFragment"
+    android:padding="8dp">
+
+
+    <TableRow android:layout_weight="0">
+        <TextView android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/contact"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <TextView android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/web_url" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <TextView android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/email" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <TextView android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/postal" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <TextView android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/phone" />
+    </TableRow>
+</TableLayout>

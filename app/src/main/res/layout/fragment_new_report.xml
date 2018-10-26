@@ -1,0 +1,99 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ar.gob.jiaac.flysafe.fragments.NewReportFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <TableRow android:layout_weight="0">
+        <TextView android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/NewReport"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <TextView android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Date" />
+
+        <EditText android:layout_weight="7"
+            android:id="@+id/editDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="yyyy-MM-dd"
+            android:inputType="date" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <TextView android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Type" />
+
+        <Spinner android:layout_weight="7"
+            android:id="@+id/spinnerType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <TextView android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Narrative"
+            android:labelFor="@+id/editNarrative" />
+
+        <EditText android:layout_weight="7"
+            android:id="@+id/editNarrative"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+    </TableRow>
+
+    <TableRow android:layout_weight="1">
+        <ListView android:layout_weight="1"
+            android:id="@+id/aircraftList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <Button android:layout_weight="1"
+            android:id="@+id/buttonAddAircraft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/AddAircraft" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <Button android:layout_weight="1"
+            android:id="@+id/buttonLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/SetLocation" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0" android:id="@+id/clearLocation">
+        <Button android:layout_weight="1"
+            android:id="@+id/buttonClearLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ClearLocation" />
+    </TableRow>
+
+    <TableRow android:layout_weight="0">
+        <Button android:layout_weight="1"
+            android:id="@+id/buttonReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Report" />
+    </TableRow>
+</TableLayout>
