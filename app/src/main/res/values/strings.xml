@@ -62,8 +62,12 @@
     <string name="Search2">Search</string>
     <string name="Language">Language</string>
     <string name="contact">Contact</string>
-    <string name="web_url">Web: https://webapp-0.firebaseapp.com/</string>
-    <string name="email">Email: flysafe@yopmail.com</string>
+    <string name="web_url">Web: <a href="https://webapp-0.firebaseapp.com/">https://webapp-0.firebaseapp.com/</a></string>
+    <string name="email">Email: <a href="mailto:flysafe@yopmail.com">flysafe@yopmail.com</a></string>
     <string name="postal">Postal: Av. Corrientes 2037 CABA</string>
-    <string name="phone">Phone: 1121795054</string>
+    <string name="phone">Phone: <a href="tel:1121795054">1121795054</a></string>
+    <string name="help">Help</string>
+    <string name="version">Version: 1.2 (oct 2018)</string>
+    <string name="user_manual">User manual: <a href="https://goo.gl/HCgwd1">Link</a></string>
+    <string name="installation_manual">Installation manual: <a href="https://goo.gl/HCgwd1">Link</a></string>
 </resources>

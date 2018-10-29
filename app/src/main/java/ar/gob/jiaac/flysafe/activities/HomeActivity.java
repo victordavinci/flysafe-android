@@ -29,6 +29,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import ar.gob.jiaac.flysafe.R;
+import ar.gob.jiaac.flysafe.fragments.HelpFragment;
 import ar.gob.jiaac.flysafe.fragments.HomeFragment;
 import ar.gob.jiaac.flysafe.fragments.MainMenuFragment;
 import ar.gob.jiaac.flysafe.fragments.NewReportFragment;
@@ -169,6 +170,9 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
                 break;
             case R.id.exit_item:
                 finish();
+                break;
+            case R.id.help_item:
+                replaceFragment(new HelpFragment(), true);
                 break;
             case R.id.logout_item:
                 AuthUI.getInstance()

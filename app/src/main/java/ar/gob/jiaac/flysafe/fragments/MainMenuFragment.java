@@ -118,7 +118,7 @@ public class MainMenuFragment extends Fragment {
         buttonAlerts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fragment hf = AlertsFragment.newInstance();
+                Fragment hf = ContactFragment.newInstance();
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment_container, hf);
                 ft.addToBackStack(hf.getClass().getName());
