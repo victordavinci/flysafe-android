@@ -21,6 +21,9 @@ public class OccurrenceType {
     }
 
     static public void updateNames(Context ctx) {
+        if (ctx == null) {
+            return;
+        }
         UNKNOWN.setName(ctx.getString(R.string.Unknown));
         ACCIDENT.setName(ctx.getString(R.string.Accident));
         INCIDENT.setName(ctx.getString(R.string.Incident));

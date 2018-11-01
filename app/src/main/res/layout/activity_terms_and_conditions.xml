@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:padding="8dp"
+    tools:context="ar.gob.jiaac.flysafe.activities.TermsAndConditionsActivity">
+
+    <TextView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:textSize="24sp"
+        android:layout_marginBottom="16sp"
+        android:textAlignment="center"
+        android:text="@string/title_activity_terms_and_conditions" />
+
+    <TextView
+        android:id="@+id/termsLabel"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/terms_and_conditions" />
+
+    <Button
+        android:id="@+id/btnAccept"
+        android:text="@string/accept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_gravity="bottom|center_horizontal" />
+    <Button
+        android:id="@+id/btnReject"
+        android:text="@string/reject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_gravity="bottom|center_horizontal" />
+
+</LinearLayout>

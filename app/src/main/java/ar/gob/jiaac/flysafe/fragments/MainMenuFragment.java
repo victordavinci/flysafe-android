@@ -43,11 +43,11 @@ public class MainMenuFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.getChildrenCount() > 0) {
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                        v.findViewById(R.id.notificationRow).setVisibility(View.VISIBLE);
+                        notif.setVisibility(View.VISIBLE);
                         notif.setText(Notification.fromSnapshot(getContext(), ds).getNotificationText());
                     }
                 } else {
-                    v.findViewById(R.id.notificationRow).setVisibility(View.GONE);
+                    notif.setVisibility(View.GONE);
                 }
             }
 
@@ -60,19 +60,19 @@ public class MainMenuFragment extends Fragment {
 
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String s) {
-                v.findViewById(R.id.notificationRow).setVisibility(View.VISIBLE);
+                v.findViewById(R.id.textViewNotification).setVisibility(View.VISIBLE);
                 notif.setText(Notification.fromSnapshot(getContext(), dataSnapshot).getNotificationText());
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, String s) {
-                v.findViewById(R.id.notificationRow).setVisibility(View.VISIBLE);
+                v.findViewById(R.id.textViewNotification).setVisibility(View.VISIBLE);
                 notif.setText(Notification.fromSnapshot(getContext(), dataSnapshot).getNotificationText());
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-                v.findViewById(R.id.notificationRow).setVisibility(View.GONE);
+                v.findViewById(R.id.textViewNotification).setVisibility(View.GONE);
             }
 
             @Override
@@ -89,7 +89,7 @@ public class MainMenuFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main_menu, container, false);
-        v.findViewById(R.id.notificationRow).setVisibility(View.GONE);
+        v.findViewById(R.id.textViewNotification).setVisibility(View.GONE);
         AppCompatImageButton buttonLatestReports = v.findViewById(R.id.buttonLatestReports);
         AppCompatImageButton buttonSafetyReports = v.findViewById(R.id.buttonSafetyRecommendations);
         AppCompatImageButton buttonAlerts = v.findViewById(R.id.buttonAlerts);

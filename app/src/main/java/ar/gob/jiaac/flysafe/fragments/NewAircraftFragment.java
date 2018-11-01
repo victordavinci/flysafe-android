@@ -52,7 +52,7 @@ public class NewAircraftFragment extends Fragment {
                 Aircraft a = new Aircraft();
                 a.setRegistration(editTextRegistration.getText().toString().trim());
                 a.setType((AircraftType) spinnerType.getSelectedItem());
-                getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, new Intent().putExtra(getString(R.string.aircraft), a));
+                getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, new Intent().putExtra("ar.gob.jiaac.flysafe.fragments.NewAircraftFragment", a));
                 getFragmentManager().popBackStack();
             }
         });

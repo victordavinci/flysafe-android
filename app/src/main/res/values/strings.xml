@@ -1,9 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FlySafe</string>
-
     <string name="navigation_drawer_open">Open drawer</string>
     <string name="navigation_drawer_close">Close drawer</string>
-
     <string name="ReportAdapterYesInvalid">Yes (invalid)</string>
     <string name="ReportAdapterYesValid">Yes (valid)</string>
     <string name="ReportAdapterYesResolved">Yes (resolved)</string>
@@ -47,6 +46,7 @@
     <string name="Airplane">Airplane</string>
     <string name="Helicopter">Helicopter</string>
     <string name="Experimental">Experimental</string>
+    <string name="Drone">Drone</string>
     <string name="Logout">Logout</string>
     <string name="Help">Help</string>
     <string name="Exit">Exit</string>
@@ -70,4 +70,40 @@
     <string name="version">Version: 1.2 (oct 2018)</string>
     <string name="user_manual">User manual: <a href="https://goo.gl/HCgwd1">Link</a></string>
     <string name="installation_manual">Installation manual: <a href="https://goo.gl/HCgwd1">Link</a></string>
+    <string name="title_activity_terms_and_conditions">Terms and conditions</string>
+    <string name="terms_and_conditions">
+<b>1) OBLIGACIONES DEL PROVEEDOR</b>\n
+El desarrollador de la plataforma FlySafe en adelante el PROVEEDOR, brindará un SISTEMA de notificación de reportes de sucesos aeronáuticos, para los usuarios de la plataforma en adelante USUARIOS.\n
+-El PROVEEDOR, tiene la obligación de publicar el código de la aplicación en el sitio web de FlySafe, además de brindar manuales de ayuda y un correo de soporte.\n
+-El PROVEEDOR, actualizará la plataforma web y mantendrá actualizada y disponible la aplicación para dispositivos móviles con sistema Android 4.4.2 o superior.\n
+-El PROVEEDOR asegurará cumplir con la normativa de protección de datos personales para la República Argentina (Ley 25.326) y todo aspecto relacionado con la seguridad de la información.\n
+<b>2) OBLIGACIONES DEL USUARIO</b>\n
+El USUARIO debe utilizar FlySafe, de acuerdo a las reglamentaciones y leyes vigentes. En caso de que FlySafe sea utilizado por terceros, será exclusiva responsabilidad del USUARIO especificar FlySafe debe ser utilizado según las reglamentaciones y leyes vigentes\n
+<b>3) MODIFICACIONES A LOS TÉRMINOS Y CONDICIONES</b>\n
+FlySafe podrá modificar los Términos y Condiciones en cualquier momento, haciéndolos públicos en el Sitio, el USUARIO deberá comunicar vía e-mail si no acepta las mismas; en ese caso quedará disuelto el vínculo contractual. Vencido este plazo, se considerará que el USUARIO acepta los nuevos términos y el contrato continuará vinculando a las partes.\n
+<b>4) PRECIOS, LICENCIA</b>\n
+FlySafe es de uso gratuito, bajo licencia de GPLv3 o superior, (Licencia Publica General).\n
+<b>5) TERMINACIÓN O CANCELACIÓN DEL SERVICIO</b>\n
+El servicio de FlySafe finalizará cuando, además de las causas legalmente establecidas y las dispuestas en las distintas cláusulas de estos Términos y Condiciones, concurra alguna de las siguientes:\n
+En cualquier momento en que el USUARIO manifieste su voluntad de cancelar o darse de baja y no seguir utilizando FlySafe, mediante comunicación al PROVEEDOR en la forma establecida en estos Términos y Condiciones.\n
+Resolución por incumplimiento de alguna de las partes de las obligaciones derivadas de los presentes Términos y Condiciones.\n
+A criterio del PROVEEDOR y cuando así lo disponga, debiendo comunicar dicha circunstancia al USUARIO y/o Usuario dentro de un plazo razonable.\n
+<br />
+En cualquier caso de resolución, terminación, rescisión, cancelación o finalización del contrato por cualquier motivo legal o por los que se estipulan en los presentes Términos y Condiciones, el USUARIO no tendrá derecho a que se le devuelva el importe abonado, ni que se le realice prorrateo del importe abonado frente al tiempo que haya mediado entre la utilización del SERVICIO y la finalización del mismo.\n
+<b>5) OBLIGACIÓN DEL PROVEEDOR EN LA CONFIDENCIALIDAD Y SEGURIDAD DE LOS DATOS, ARCHIVOS, DOCUMENTOS E INFORMACIÓN DEL USUARIO\n
+OBLIGACIÓN Y DEBER DE CONFIDENCIALIDAD DEL PROVEEDOR</b>\n
+<br />
+Toda la información comercial, comprendiéndose como tal: datos, archivos, documentos, fotografías, imágenes, documentos comerciales, negocios comerciales, operaciones y condición financiera, contable, legal, administrativa de otra naturaleza que incluya estados financieros, historia operativa, proyecciones financieras, planes comerciales y de marketing, información sobre USUARIOS, bases de datos, contratos relativos a su objeto, compilaciones e información de desarrollo, estudios y otros documentos preparados tanto por asesores legales, contadores u otros representantes o terceros, información de sus socios o accionistas que el USUARIO y/o Usuario almacene o envíe al Servidor contratado por el PROVEEDOR mediante la utilización del SOFTWARE y/o del SERVICIO, ES CONSIDERADA INFORMACIÓN CONFIDENCIAL Y DE EXCLUSIVA PROPIEDAD DEL USUARIO.\n
+<br />
+En este contexto, el PROVEEDOR se obliga a mantener la confidencialidad de toda la información comercial que el USUARIO y/o Usuario haya almacenado en virtud de la utilización del SOFTWARE.\n
+Dicha información será mantenida en reserva por el PROVEEDOR, quien asume el deber y la obligación de no revelarla bajo ninguna forma, en todo o en parte, a ninguna persona física o jurídica que no sea parte del Contrato.\n
+<br />
+Se excluye de la categoría de información comercial confidencial toda aquella información que se convierta en pública, aquella que haya de ser revelada de acuerdo con las leyes o con una resolución judicial o acto imperativo de autoridad competente y aquella que sea obtenida por un tercero que no se encuentre bajo la obligación de confidencialidad.\n
+<br />
+Ninguna de las partes (PROVEEDOR, USUARIO y/o Usuario) adquirirá ningún derecho sobre cualquier información comercial u otros derechos de propiedad de la otra parte como resultado de este contrato.
+    </string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="faq">FAQ</string>
+    <string name="faqs">FAQ</string>
 </resources>

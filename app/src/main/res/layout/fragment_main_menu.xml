@@ -8,23 +8,19 @@
     android:orientation="vertical"
     android:weightSum="1.0">
 
+    <TextView
+        android:id="@+id/textViewNotification"
+        android:layout_weight="0.125"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="" />
+
     <TableLayout android:layout_weight="0.75"
         android:stretchColumns="*"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TableRow
-            android:id="@+id/notificationRow">
-            <TextView
-                android:id="@+id/textViewNotification"
-                android:layout_weight="7"
-                android:textSize="16sp"
-                android:height="48dp"
-                android:gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="" />
-        </TableRow>
+        android:layout_height="wrap_content">
 
         <TableRow>
             <TextView
@@ -103,7 +99,7 @@
     </TableLayout>
 
     <android.support.v7.widget.AppCompatImageView
-        android:layout_weight="0.25"
+        android:layout_weight="0.125"
         android:layout_width="match_parent"
         android:layout_height="256dp"
         android:layout_marginBottom="32dp"

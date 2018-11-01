@@ -10,7 +10,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +20,11 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.evernote.android.state.State;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
-import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -67,7 +64,7 @@ public class NewReportFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == NEW_AIRCRAFT_REQUEST_CODE && resultCode == RESULT_OK) {
-            Aircraft a = (Aircraft) data.getSerializableExtra("aircraft");
+            Aircraft a = (Aircraft) data.getSerializableExtra("ar.gob.jiaac.flysafe.fragments.NewAircraftFragment");
             if (a != null) {
                 if (aircrafts.contains(a)) {
                     Toast.makeText(getContext(), R.string.AircraftAlreadyAdded, Toast.LENGTH_LONG).show();

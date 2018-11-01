@@ -9,8 +9,9 @@ public class AircraftType {
     static public final AircraftType AIRPLANE = new AircraftType(1, "Airplane");
     static public final AircraftType HELICOPTER = new AircraftType(2, "Helicopter");
     static public final AircraftType EXPERIMENTAL = new AircraftType(3, "Experimental");
+    static public final AircraftType DRONE = new AircraftType(4, "Drone");
 
-    static public final AircraftType[] aircraftTypes = {UNKNOWN, AIRPLANE, HELICOPTER, EXPERIMENTAL};
+    static public final AircraftType[] aircraftTypes = {UNKNOWN, AIRPLANE, HELICOPTER, EXPERIMENTAL, DRONE};
 
     private long type;
     private String name;
@@ -21,10 +22,14 @@ public class AircraftType {
     }
 
     static public void updateNames(Context ctx) {
+        if (ctx == null) {
+            return;
+        }
         UNKNOWN.setName(ctx.getString(R.string.Unknown));
         AIRPLANE.setName(ctx.getString(R.string.Airplane));
         HELICOPTER.setName(ctx.getString(R.string.Helicopter));
-        HELICOPTER.setName(ctx.getString(R.string.Experimental));
+        EXPERIMENTAL.setName(ctx.getString(R.string.Experimental));
+        DRONE.setName(ctx.getString(R.string.Drone));
     }
 
     static public AircraftType fromLong(Context ctx, long type) {
