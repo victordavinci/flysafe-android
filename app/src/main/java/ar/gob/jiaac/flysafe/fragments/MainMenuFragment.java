@@ -96,9 +96,7 @@ public class MainMenuFragment extends Fragment {
         buttonLatestReports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Fragment hf = HomeFragment.newInstance();
                 Fragment hf = new ReportsTabsFragment();
-                //na.setTargetFragment(NewReportFragment.this, NEW_AIRCRAFT_REQUEST_CODE);
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment_container, hf);
                 ft.addToBackStack(hf.getClass().getName());

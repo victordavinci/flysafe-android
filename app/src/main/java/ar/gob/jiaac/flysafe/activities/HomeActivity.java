@@ -18,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -140,18 +141,34 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_SIGN_IN) {
             if (resultCode == RESULT_OK) {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (nv != null) {
-                    TextView email = nv.getHeaderView(0).findViewById(R.id.textViewUserEmail);
-                    email.setText(user.getEmail());
+                if (!user.isEmailVerified()) {
+                    user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "Se ha enviado un email a su casilla de correo", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Error al enviar correo de verificación, intente de nuevo", Toast.LENGTH_LONG).show();
+                            }
+                            FirebaseAuth.getInstance().signOut();
+                            finish();
+                        }
+                    });
+                } else {
+                    if (nv != null) {
+                        TextView email = nv.getHeaderView(0).findViewById(R.id.textViewUserEmail);
+                        email.setText(user.getEmail());
+                    }
+                    replaceFragment(MainMenuFragment.newInstance(), false);
                 }
-                replaceFragment(MainMenuFragment.newInstance(), false);
             } else {
                 finish();
             }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
         }
     }
 

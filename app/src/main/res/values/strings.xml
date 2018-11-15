@@ -67,40 +67,40 @@
     <string name="postal">Postal: Av. Corrientes 2037 CABA</string>
     <string name="phone">Phone: <a href="tel:1121795054">1121795054</a></string>
     <string name="help">Help</string>
-    <string name="version">Version: 1.2 (oct 2018)</string>
+    <string name="version">Version: 1.3 (oct 2018)</string>
     <string name="user_manual">User manual: <a href="https://goo.gl/HCgwd1">Link</a></string>
     <string name="installation_manual">Installation manual: <a href="https://goo.gl/HCgwd1">Link</a></string>
     <string name="title_activity_terms_and_conditions">Terms and conditions</string>
     <string name="terms_and_conditions">
-<b>1) OBLIGACIONES DEL PROVEEDOR</b>\n
-El desarrollador de la plataforma FlySafe en adelante el PROVEEDOR, brindará un SISTEMA de notificación de reportes de sucesos aeronáuticos, para los usuarios de la plataforma en adelante USUARIOS.\n
--El PROVEEDOR, tiene la obligación de publicar el código de la aplicación en el sitio web de FlySafe, además de brindar manuales de ayuda y un correo de soporte.\n
--El PROVEEDOR, actualizará la plataforma web y mantendrá actualizada y disponible la aplicación para dispositivos móviles con sistema Android 4.4.2 o superior.\n
--El PROVEEDOR asegurará cumplir con la normativa de protección de datos personales para la República Argentina (Ley 25.326) y todo aspecto relacionado con la seguridad de la información.\n
-<b>2) OBLIGACIONES DEL USUARIO</b>\n
-El USUARIO debe utilizar FlySafe, de acuerdo a las reglamentaciones y leyes vigentes. En caso de que FlySafe sea utilizado por terceros, será exclusiva responsabilidad del USUARIO especificar FlySafe debe ser utilizado según las reglamentaciones y leyes vigentes\n
-<b>3) MODIFICACIONES A LOS TÉRMINOS Y CONDICIONES</b>\n
-FlySafe podrá modificar los Términos y Condiciones en cualquier momento, haciéndolos públicos en el Sitio, el USUARIO deberá comunicar vía e-mail si no acepta las mismas; en ese caso quedará disuelto el vínculo contractual. Vencido este plazo, se considerará que el USUARIO acepta los nuevos términos y el contrato continuará vinculando a las partes.\n
-<b>4) PRECIOS, LICENCIA</b>\n
-FlySafe es de uso gratuito, bajo licencia de GPLv3 o superior, (Licencia Publica General).\n
-<b>5) TERMINACIÓN O CANCELACIÓN DEL SERVICIO</b>\n
-El servicio de FlySafe finalizará cuando, además de las causas legalmente establecidas y las dispuestas en las distintas cláusulas de estos Términos y Condiciones, concurra alguna de las siguientes:\n
-En cualquier momento en que el USUARIO manifieste su voluntad de cancelar o darse de baja y no seguir utilizando FlySafe, mediante comunicación al PROVEEDOR en la forma establecida en estos Términos y Condiciones.\n
-Resolución por incumplimiento de alguna de las partes de las obligaciones derivadas de los presentes Términos y Condiciones.\n
-A criterio del PROVEEDOR y cuando así lo disponga, debiendo comunicar dicha circunstancia al USUARIO y/o Usuario dentro de un plazo razonable.\n
+<b>1) OBLIGATIONS OF THE PROVIDER</b>\n
+The developer of the FlySafe platform, the SUPPLIER, provided an aeronautical event reporting notification system, for the users of the platform onwards USERS.\n
+-The SUPPLIER, has the obligation to publish the code of the application on the website of FlySafe, in addition to providing help manuals and a support email.\n
+-The SUPPLIER, update the web platform and keep updated and available the application for mobile devices with Android 4.4.2 or higher.\n
+-The SUPPLIER will make sure to comply with the personal data protection regulations for the Argentine Republic (Law 25.326) and all aspects related to the security of information.\n
+<b>2) USER OBLIGATIONS</b>\n
+The USER must use FlySafe, according to the regulations and laws in force. In case FlySafe is used by third parties, it will be the sole responsibility of the USER to specify FlySafe must be used in accordance with current regulations and laws.\n
+<b>3) MODIFICATIONS TO THE TERMS AND CONDITIONS</b>\n
+FlySafe can modify the Terms and Conditions at any time, making them public on the Site, the USER must use the via email if he does not accept them; In that case, the contractual link would be dissolved. Upon expiration of this term, it is considered that the user accepts the new terms and the contract will continue to bind the parties.\n
+<b>4) PRICES, LICENSE</b>\n
+FlySafe is free to use, licensed by GPLv3 or higher, (General Public License).\n
+<b>5) TERMINATION OR CANCELLATION OF THE SERVICE</b>\n
+The flightSafe service will end when, in addition to the legally established causes and those provided in the different clauses of these Terms and Conditions, there is one of the following:\n
+At any time, in the USER, see your willingness to cancel or no longer use FlySafe, by communicating to the SUPPLIER.\n
+Resolution for breach of any part of the parties of the obligations.\n
+At the SUPPLIER\'s discretion and when I have it available, said circumstance must be said in the USER and / or User within a reasonable time.\n
 <br />
-En cualquier caso de resolución, terminación, rescisión, cancelación o finalización del contrato por cualquier motivo legal o por los que se estipulan en los presentes Términos y Condiciones, el USUARIO no tendrá derecho a que se le devuelva el importe abonado, ni que se le realice prorrateo del importe abonado frente al tiempo que haya mediado entre la utilización del SERVICIO y la finalización del mismo.\n
-<b>5) OBLIGACIÓN DEL PROVEEDOR EN LA CONFIDENCIALIDAD Y SEGURIDAD DE LOS DATOS, ARCHIVOS, DOCUMENTOS E INFORMACIÓN DEL USUARIO\n
-OBLIGACIÓN Y DEBER DE CONFIDENCIALIDAD DEL PROVEEDOR</b>\n
+In any case of resolution, termination, rescission, cancellation or termination of the contract for any legal reason or by which is stipulated in the current terms and conditions, the USER will not be entitled to the subscriber\'s legend, nor will it be apportioned of the amount paid against the time you have measured between the use of the SERVICE and the end of it.\n
+<b>5) OBLIGATION OF THE PROVIDER IN THE CONFIDENTIALITY AND SECURITY OF DATA, FILES, DOCUMENTS AND USER INFORMATION\n
+OBLIGATION AND DUTY OF CONFIDENTIALITY OF THE PROVIDER</b>\n
 <br />
-Toda la información comercial, comprendiéndose como tal: datos, archivos, documentos, fotografías, imágenes, documentos comerciales, negocios comerciales, operaciones y condición financiera, contable, legal, administrativa de otra naturaleza que incluya estados financieros, historia operativa, proyecciones financieras, planes comerciales y de marketing, información sobre USUARIOS, bases de datos, contratos relativos a su objeto, compilaciones e información de desarrollo, estudios y otros documentos preparados tanto por asesores legales, contadores u otros representantes o terceros, información de sus socios o accionistas que el USUARIO y/o Usuario almacene o envíe al Servidor contratado por el PROVEEDOR mediante la utilización del SOFTWARE y/o del SERVICIO, ES CONSIDERADA INFORMACIÓN CONFIDENCIAL Y DE EXCLUSIVA PROPIEDAD DEL USUARIO.\n
+All commercial information, including as such: data, files, documents, photographs, images, commercial documents, commercial business, operations and financial, accounting, legal, administrative nature of another nature that includes financial statements, operating history, financial projections, plans commercial and marketing, information about USERS, databases, contracts related to its purpose, compilations and development information, studies and other documents prepared by legal advisors, accountants or other representatives or third parties, information of its partners or shareholders that the USER and / or User store or send the server hired by the SUPPLIER by using the SOFTWARE and / or the SERVICE, IS CONSIDERED CONFIDENTIAL INFORMATION AND EXCLUSIVE PROPERTY OF THE USER.\n
 <br />
-En este contexto, el PROVEEDOR se obliga a mantener la confidencialidad de toda la información comercial que el USUARIO y/o Usuario haya almacenado en virtud de la utilización del SOFTWARE.\n
-Dicha información será mantenida en reserva por el PROVEEDOR, quien asume el deber y la obligación de no revelarla bajo ninguna forma, en todo o en parte, a ninguna persona física o jurídica que no sea parte del Contrato.\n
+In this context, the SUPPLIER undertakes to maintain the confidentiality of all commercial information that the USER and / or User has stored by virtue of the use of the SOFTWARE.\n
+Said information will be kept in reserve by the SUPPLIER, who assumes the duty and obligation not to disclose it in any way, in whole or in part, to any individual or legal entity that is not part of the Contract.\n
 <br />
-Se excluye de la categoría de información comercial confidencial toda aquella información que se convierta en pública, aquella que haya de ser revelada de acuerdo con las leyes o con una resolución judicial o acto imperativo de autoridad competente y aquella que sea obtenida por un tercero que no se encuentre bajo la obligación de confidencialidad.\n
+Any information that becomes public, that which has to be disclosed in accordance with the laws or with a judicial resolution or imperative act of a competent authority and that obtained by a third party that does not, is excluded from the category of confidential business information. is under the obligation of confidentiality.\n
 <br />
-Ninguna de las partes (PROVEEDOR, USUARIO y/o Usuario) adquirirá ningún derecho sobre cualquier información comercial u otros derechos de propiedad de la otra parte como resultado de este contrato.
+Neither party (SUPPLIER, USER and / or User) will acquire any right over any commercial information or other property rights of the other party as a result of this contract.
     </string>
     <string name="accept">Accept</string>
     <string name="reject">Reject</string>
