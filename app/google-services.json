@@ -8,6 +8,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:174913995232:android:77426870a7afa9ca",
+        "android_client_info": {
+          "package_name": "ar.gob.jiaac.flysafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174913995232-l97rppd6jukomi60ljp8e0kdde33d6q8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ar.gob.jiaac.flysafe",
+            "certificate_hash": "53e55f04b9677025b34e022c82c0f2c2e999a9ef"
+          }
+        },
+        {
+          "client_id": "174913995232-5id5m3ps6it2vf88p78hcck4077rcdlr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhfUjKS_Y2nPazS8CBiVlMWf75tKMQJXE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174913995232-5id5m3ps6it2vf88p78hcck4077rcdlr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:174913995232:android:d78a8e2d7e2ca61a",
         "android_client_info": {
           "package_name": "ar.gob.jiaac.prueba1"

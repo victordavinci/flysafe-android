@@ -14,12 +14,9 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.DynamicDrawableSpan;
 import android.text.style.ImageSpan;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.evernote.android.state.State;
 
 import java.util.ArrayList;
 import java.util.List;

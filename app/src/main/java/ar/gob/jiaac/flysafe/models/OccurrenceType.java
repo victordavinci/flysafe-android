@@ -1,7 +1,6 @@
 package ar.gob.jiaac.flysafe.models;
 
 import android.content.Context;
-import android.content.res.Resources;
 
 import ar.gob.jiaac.flysafe.R;
 

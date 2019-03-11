@@ -4,7 +4,6 @@ package ar.gob.jiaac.flysafe.fragments;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import ar.gob.jiaac.flysafe.R;
-import ar.gob.jiaac.flysafe.models.Recommendation;
 
 public class ReportsMapFragment extends Fragment implements OnMapReadyCallback {
 
