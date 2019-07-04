@@ -1,11 +1,13 @@
 package ar.gob.jiaac.flysafe.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.ListFragment;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -47,8 +49,9 @@ public class SafetyRecommendationsFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        if (recommendationAdapter == null) {
-            recommendationAdapter = new RecommendationAdapter(getActivity(), recommendations);
+        FragmentActivity fragmentActivity = getActivity();
+        if (recommendationAdapter == null && fragmentActivity != null) {
+            recommendationAdapter = new RecommendationAdapter(fragmentActivity, recommendations);
             setListAdapter(recommendationAdapter);
 
             DatabaseReference reportsRef = FirebaseDatabase.getInstance().getReference("recommendations");

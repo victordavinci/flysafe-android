@@ -8,6 +8,7 @@ import java.util.Date;
 
 import ar.gob.jiaac.flysafe.utils.DateUtils;
 
+@SuppressWarnings({"WeakerAccess", "unused"})
 @IgnoreExtraProperties
 public class Recommendation {
     @Exclude

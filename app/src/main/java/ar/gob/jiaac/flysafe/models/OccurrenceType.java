@@ -2,12 +2,15 @@ package ar.gob.jiaac.flysafe.models;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import ar.gob.jiaac.flysafe.R;
 
+@SuppressWarnings("WeakerAccess")
 public class OccurrenceType {
-    static public OccurrenceType UNKNOWN = new OccurrenceType(0, "Unknown");
-    static public OccurrenceType ACCIDENT = new OccurrenceType(1, "Accident");
-    static public OccurrenceType INCIDENT = new OccurrenceType(2, "Incident");
+    static public final OccurrenceType UNKNOWN = new OccurrenceType(0, "Unknown");
+    static public final OccurrenceType ACCIDENT = new OccurrenceType(1, "Accident");
+    static public final OccurrenceType INCIDENT = new OccurrenceType(2, "Incident");
 
     static public final OccurrenceType[] occurrenceTypes = { UNKNOWN, ACCIDENT, INCIDENT };
 
@@ -54,5 +57,6 @@ public class OccurrenceType {
         this.name = name;
     }
 
+    @NonNull
     public String toString() { return name; }
 }

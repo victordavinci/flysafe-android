@@ -1,14 +1,15 @@
 package ar.gob.jiaac.flysafe.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.AppCompatImageButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -17,6 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 import ar.gob.jiaac.flysafe.R;
 import ar.gob.jiaac.flysafe.models.Notification;
@@ -34,8 +37,10 @@ public class MainMenuFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         DatabaseReference notifRef = FirebaseDatabase.getInstance().getReference("notifications");
-        String u = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String u = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
         final View v = getView();
+        if (v == null) return;
+
         final TextView notif = v.findViewById(R.id.textViewNotification);
 
         notifRef.orderByChild("user").equalTo(u).limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -97,7 +102,7 @@ public class MainMenuFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment hf = new ReportsTabsFragment();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                FragmentTransaction ft = Objects.requireNonNull(getFragmentManager()).beginTransaction();
                 ft.replace(R.id.fragment_container, hf);
                 ft.addToBackStack(hf.getClass().getName());
                 ft.commit();
@@ -107,7 +112,7 @@ public class MainMenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment hf = SafetyRecommendationsFragment.newInstance();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                FragmentTransaction ft = Objects.requireNonNull(getFragmentManager()).beginTransaction();
                 ft.replace(R.id.fragment_container, hf);
                 ft.addToBackStack(hf.getClass().getName());
                 ft.commit();
@@ -117,7 +122,7 @@ public class MainMenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment hf = ContactFragment.newInstance();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                FragmentTransaction ft = Objects.requireNonNull(getFragmentManager()).beginTransaction();
                 ft.replace(R.id.fragment_container, hf);
                 ft.addToBackStack(hf.getClass().getName());
                 ft.commit();

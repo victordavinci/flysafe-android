@@ -16,7 +16,7 @@
         android:textStyle="bold"
         android:layout_marginBottom="16sp"/>
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="128sp"
         app:srcCompat="@drawable/ic_fs_launcher"

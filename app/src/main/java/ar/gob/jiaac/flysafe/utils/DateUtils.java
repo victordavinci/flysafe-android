@@ -12,6 +12,7 @@ public class DateUtils {
         try {
             date = df.parse(strDate);
         } catch (NullPointerException | ParseException e) {
+            e.printStackTrace();
         }
         return date;
     }

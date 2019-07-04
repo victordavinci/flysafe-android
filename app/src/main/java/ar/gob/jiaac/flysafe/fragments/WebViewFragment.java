@@ -4,13 +4,15 @@ package ar.gob.jiaac.flysafe.fragments;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import ar.gob.jiaac.flysafe.R;
 
@@ -39,7 +41,7 @@ public class WebViewFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_web_view, container, false);
         WebView wv = v.findViewById(R.id.webview);
@@ -48,7 +50,7 @@ public class WebViewFragment extends Fragment {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 String host = Uri.parse(url).getHost();
-                if (host.equals("twitter.com") || host.equals("www.twitter.com") || host.equals("mobile.twitter.com")) {
+                if (host != null && (host.equals("twitter.com") || host.equals("www.twitter.com") || host.equals("mobile.twitter.com"))) {
                     view.loadUrl(url);
                 } else {
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));

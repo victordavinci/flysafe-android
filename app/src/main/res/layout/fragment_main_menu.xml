@@ -37,7 +37,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
-                <android.support.v7.widget.AppCompatImageButton
+                <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/buttonLatestReports"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
@@ -62,7 +62,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
-                <android.support.v7.widget.AppCompatImageButton
+                <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/buttonSafetyRecommendations"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
@@ -87,7 +87,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
-                <android.support.v7.widget.AppCompatImageButton
+                <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/buttonAlerts"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
@@ -98,7 +98,7 @@
         </TableRow>
     </TableLayout>
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_weight="0.125"
         android:layout_width="match_parent"
         android:layout_height="256dp"

@@ -50,7 +50,7 @@
         <activity
             android:name="ar.gob.jiaac.flysafe.activities.TermsAndConditionsActivity"
             android:label="@string/title_activity_terms_and_conditions"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

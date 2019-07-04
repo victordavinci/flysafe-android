@@ -2,6 +2,8 @@ package ar.gob.jiaac.flysafe.models;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.database.DataSnapshot;
 
 import java.util.Date;
@@ -10,6 +12,7 @@ import java.util.Objects;
 import ar.gob.jiaac.flysafe.R;
 import ar.gob.jiaac.flysafe.utils.DateUtils;
 
+@SuppressWarnings("WeakerAccess")
 public class Notification {
     private String id;
     private String aircrafts;
@@ -19,7 +22,7 @@ public class Notification {
     private String report;
     private Date reportDate;
     private String user;
-    private Context ctx;
+    private final Context ctx;
 
     @Override
     public boolean equals(Object o) {
@@ -48,8 +51,9 @@ public class Notification {
         Notification r = new Notification(ctx);
         r.setId(ds.getKey());
         r.setAircrafts((String) ds.child("aircrafts").getValue());
-        if (ds.child("date").getValue() != null) {
-            r.setDate(new Date((Long) ds.child("date").getValue()));
+        Long ldate = (Long) ds.child("date").getValue();
+        if (ldate != null) {
+            r.setDate(new Date(ldate));
         }
         r.setNewValue((Long) ds.child("newValue").getValue());
         r.setOldValue((Long) ds.child("oldValue").getValue());
@@ -78,6 +82,7 @@ public class Notification {
         return sb.toString();
     }
 
+    @NonNull
     public String toString() {
         return getNotificationText();
     }
@@ -138,6 +143,7 @@ public class Notification {
         this.user = user;
     }
 
+    @SuppressWarnings("unused")
     public String getId() {
         return id;
     }

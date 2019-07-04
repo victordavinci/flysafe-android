@@ -2,14 +2,11 @@ package ar.gob.jiaac.flysafe.fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +19,19 @@ import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.evernote.android.state.State;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.libraries.places.compat.Place;
+import com.google.android.libraries.places.compat.ui.PlacePicker;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 import ar.gob.jiaac.flysafe.R;
 import ar.gob.jiaac.flysafe.models.Aircraft;
@@ -36,6 +40,7 @@ import ar.gob.jiaac.flysafe.models.Report;
 
 import static android.app.Activity.RESULT_OK;
 
+@SuppressWarnings("WeakerAccess")
 public class NewReportFragment extends Fragment {
     private static final int NEW_AIRCRAFT_REQUEST_CODE = 1;
     private static final int PLACE_PICKER_REQUEST = 2;
@@ -46,7 +51,6 @@ public class NewReportFragment extends Fragment {
     private ListView aircraftList;
     private TableRow clearLocationRow;
     private Button location;
-    private Button clearLocation;
 
     @State public String placeName;
     public Place place;
@@ -75,7 +79,7 @@ public class NewReportFragment extends Fragment {
             }
         } else if (requestCode == PLACE_PICKER_REQUEST) {
             if (resultCode == RESULT_OK) {
-                place = PlacePicker.getPlace(getActivity(), data);
+                place = PlacePicker.getPlace(Objects.requireNonNull(getActivity()), data);
                 if (place != null) {
                     placeName = getLocationName();
                     location.setText(getString(R.string.SetLocation) + " (" + placeName + ")");
@@ -99,13 +103,16 @@ public class NewReportFragment extends Fragment {
 
         final Activity a = getActivity();
         View v = getView();
-        clearLocationRow = v.findViewById(R.id.clearLocation);
-        editDate = v.findViewById(R.id.editDate);
+        clearLocationRow = v != null ? (TableRow) v.findViewById(R.id.clearLocation) : null;
+        editDate = v != null ? (EditText) v.findViewById(R.id.editDate) : null;
         editNarrative = v.findViewById(R.id.editNarrative);
         spinnerType = v.findViewById(R.id.spinnerType);
         aircraftList = v.findViewById(R.id.aircraftList);
-        spinnerType.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, occurrenceTypes));
-        aircraftList.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, aircrafts));
+        Context context = getContext();
+        if (context != null) {
+            spinnerType.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, occurrenceTypes));
+            aircraftList.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, aircrafts));
+        }
         aircraftList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
@@ -123,11 +130,12 @@ public class NewReportFragment extends Fragment {
         Button report = v.findViewById(R.id.buttonReport);
         Button addAircraft = v.findViewById(R.id.buttonAddAircraft);
         location = v.findViewById(R.id.buttonLocation);
-        clearLocation = v.findViewById(R.id.buttonClearLocation);
+        Button clearLocation = v.findViewById(R.id.buttonClearLocation);
         if (placeName != null) {
             location.setText(getString(R.string.SetLocation) + " (" + placeName + ")");
-            clearLocationRow.setVisibility(View.VISIBLE);
-        } else {
+            if (clearLocationRow != null)
+                clearLocationRow.setVisibility(View.VISIBLE);
+        } else if (clearLocationRow != null) {
             clearLocationRow.setVisibility(View.GONE);
         }
         addAircraft.setOnClickListener(new View.OnClickListener() {
@@ -135,10 +143,13 @@ public class NewReportFragment extends Fragment {
             public void onClick(View v) {
                 Fragment na = NewAircraftFragment.newInstance();
                 na.setTargetFragment(NewReportFragment.this, NEW_AIRCRAFT_REQUEST_CODE);
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.fragment_container, na);
-                ft.addToBackStack(na.getClass().getName());
-                ft.commit();
+                FragmentManager fragmentManager = getFragmentManager();
+                if (fragmentManager != null) {
+                    FragmentTransaction ft = fragmentManager.beginTransaction();
+                    ft.replace(R.id.fragment_container, na);
+                    ft.addToBackStack(na.getClass().getName());
+                    ft.commit();
+                }
             }
         });
         location.setOnClickListener(new View.OnClickListener() {
@@ -183,9 +194,17 @@ public class NewReportFragment extends Fragment {
                 } else {
                     r.save();
                 }
-                getFragmentManager().popBackStack();
-                if (getFragmentManager().getBackStackEntryCount() == 1) {
-                    ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                FragmentManager fragmentManager = getFragmentManager();
+                if (fragmentManager != null) {
+                    fragmentManager.popBackStack();
+                    if (fragmentManager.getBackStackEntryCount() == 1) {
+                        AppCompatActivity activity = (AppCompatActivity) getActivity();
+                        if (activity != null) {
+                            androidx.appcompat.app.ActionBar actionBar = activity.getSupportActionBar();
+                            if (actionBar != null)
+                                actionBar.setDisplayHomeAsUpEnabled(false);
+                        }
+                    }
                 }
             }
         });
@@ -197,8 +216,8 @@ public class NewReportFragment extends Fragment {
         }
         String location = place.getName().toString().trim();
         if (location.length() == 0) {
-            Double lat = place.getLatLng().latitude;
-            Double lng = place.getLatLng().longitude;
+            double lat = place.getLatLng().latitude;
+            double lng = place.getLatLng().longitude;
             location = Location.convert(lat, Location.FORMAT_SECONDS) + " - " + Location.convert(lng, Location.FORMAT_SECONDS);
         }
         return location;

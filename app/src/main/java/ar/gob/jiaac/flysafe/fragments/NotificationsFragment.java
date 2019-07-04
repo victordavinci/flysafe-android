@@ -2,12 +2,14 @@ package ar.gob.jiaac.flysafe.fragments;
 
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.ListFragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -18,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import ar.gob.jiaac.flysafe.R;
 import ar.gob.jiaac.flysafe.models.Notification;
@@ -52,13 +55,14 @@ public class NotificationsFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        if (listAdapter == null) {
-            listAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, notifications);
+        FragmentActivity fragmentActivity = getActivity();
+        if (listAdapter == null && fragmentActivity != null) {
+            listAdapter = new ArrayAdapter<>(fragmentActivity, android.R.layout.simple_list_item_1, notifications);
             setListAdapter(listAdapter);
 
             DatabaseReference notificationsRef = FirebaseDatabase.getInstance().getReference("notifications");
 
-            String u = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            String u = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
 
             notificationsRef.orderByChild("user").equalTo(u).limitToLast(20).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override

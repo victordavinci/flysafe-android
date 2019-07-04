@@ -2,6 +2,8 @@ package ar.gob.jiaac.flysafe.models;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
@@ -10,6 +12,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings({"WeakerAccess", "unused"})
 @IgnoreExtraProperties
 public class Aircraft implements Serializable {
     @Exclude
@@ -54,6 +57,7 @@ public class Aircraft implements Serializable {
     }
 
     @Exclude
+    @NonNull
     public String toString() {
         return getType().getName() + " - " + getRegistration();
     }

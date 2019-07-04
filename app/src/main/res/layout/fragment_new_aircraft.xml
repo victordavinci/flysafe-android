@@ -29,7 +29,8 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="LV-XXX"
-            android:text="" />
+            android:text=""
+            android:importantForAutofill="no" />
     </TableRow>
 
     <TableRow android:layout_weight="0">

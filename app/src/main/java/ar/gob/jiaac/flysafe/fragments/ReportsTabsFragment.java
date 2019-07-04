@@ -4,12 +4,6 @@ package ar.gob.jiaac.flysafe.fragments;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.DynamicDrawableSpan;
@@ -18,11 +12,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import ar.gob.jiaac.flysafe.R;
 
+@SuppressWarnings("WeakerAccess")
 public class ReportsTabsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,10 +42,12 @@ public class ReportsTabsFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         View view = getView();
-        ViewPager viewPager = view.findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
-        TabLayout tabs = view.findViewById(R.id.result_tabs);
-        tabs.setupWithViewPager(viewPager);
+        if (view != null) {
+            ViewPager viewPager = view.findViewById(R.id.viewpager);
+            setupViewPager(viewPager);
+            TabLayout tabs = view.findViewById(R.id.result_tabs);
+            tabs.setupWithViewPager(viewPager);
+        }
     }
 
     private void setupViewPager(ViewPager viewPager) {

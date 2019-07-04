@@ -3,11 +3,12 @@ package ar.gob.jiaac.flysafe.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import ar.gob.jiaac.flysafe.R;
 
@@ -26,7 +27,7 @@ public class TermsAndConditionsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences sp = getSharedPreferences("ar.gob.jiaac.flysafe", 0);
-                sp.edit().putBoolean("TermsAndConditions", true).commit();
+                sp.edit().putBoolean("TermsAndConditions", true).apply();
                 Intent home = new Intent(TermsAndConditionsActivity.this, HomeActivity.class);
                 TermsAndConditionsActivity.this.startActivity(home);
                 TermsAndConditionsActivity.this.finish();

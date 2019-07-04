@@ -16,14 +16,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
+@SuppressWarnings({"WeakerAccess", "unused"})
 @IgnoreExtraProperties
 public class Report {
     @Exclude
     private String id;
     private Date date;
     private OccurrenceType occurrenceType;
-    private String user = FirebaseAuth.getInstance().getCurrentUser().getUid();
+    private String user = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
     private String narrative;
     private ArrayList<Aircraft> aircrafts = new ArrayList<>();
     private Long validated = 0L;

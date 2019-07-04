@@ -2,8 +2,6 @@ package ar.gob.jiaac.flysafe.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableRow;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.ListFragment;
 
 import com.evernote.android.state.State;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,11 +28,13 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import ar.gob.jiaac.flysafe.R;
 import ar.gob.jiaac.flysafe.adapters.ReportAdapter;
 import ar.gob.jiaac.flysafe.models.Report;
 
+@SuppressWarnings("WeakerAccess")
 public class HomeFragment extends ListFragment {
     @State public ArrayList<Report> reports = new ArrayList<>();
     public ReportAdapter reportAdapter;
@@ -41,11 +45,11 @@ public class HomeFragment extends ListFragment {
 
     private EditText searchText;
 
-    private DatabaseReference reportsRef = FirebaseDatabase.getInstance().getReference("reports");
-    private DatabaseReference aircraftsRef = FirebaseDatabase.getInstance().getReference("aircrafts");
+    private final DatabaseReference reportsRef = FirebaseDatabase.getInstance().getReference("reports");
+    private final DatabaseReference aircraftsRef = FirebaseDatabase.getInstance().getReference("aircrafts");
     private Query q;
 
-    private ValueEventListener initialListListener = new ValueEventListener() {
+    private final ValueEventListener initialListListener = new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             reports.clear();
@@ -63,7 +67,7 @@ public class HomeFragment extends ListFragment {
         }
     };
 
-    private ChildEventListener updateListListener = new ChildEventListener() {
+    private final ChildEventListener updateListListener = new ChildEventListener() {
         @Override
         public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String s) {
             Report r = Report.fromSnapshot(getContext(), dataSnapshot);
@@ -121,8 +125,11 @@ public class HomeFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        mine = getArguments().getBoolean("mine", false);
-        search = getArguments().getBoolean("search", false);
+        Bundle arguments = getArguments();
+        if (arguments != null) {
+            mine = arguments.getBoolean("mine", false);
+            search = arguments.getBoolean("search", false);
+        }
     }
 
     @Override
@@ -152,7 +159,7 @@ public class HomeFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
 
         View v = getView();
-        if (search) {
+        if (search && v != null) {
             TableRow tr1 = v.findViewById(R.id.searchRow1);
             TableRow tr2 = v.findViewById(R.id.searchRow2);
             tr1.setVisibility(View.VISIBLE);
@@ -168,10 +175,13 @@ public class HomeFragment extends ListFragment {
         }
 
         if (reportAdapter == null) {
-            reportAdapter = new ReportAdapter(getActivity(), reports);
-            setListAdapter(reportAdapter);
+            FragmentActivity fragmentActivity = getActivity();
+            if (fragmentActivity != null) {
+                reportAdapter = new ReportAdapter(getActivity(), reports);
+                setListAdapter(reportAdapter);
 
-            updateReportsList();
+                updateReportsList();
+            }
         } else {
             for (Report r : reports) {
                 r.updateLanguage(getContext());
@@ -229,7 +239,7 @@ public class HomeFragment extends ListFragment {
             });
         } else if(!search) {
             if (mine) {
-                q = reportsRef.orderByChild("user").equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid()).limitToLast(20);
+                q = reportsRef.orderByChild("user").equalTo(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).limitToLast(20);
             } else {
                 q = reportsRef.orderByChild("date").limitToLast(20);
             }

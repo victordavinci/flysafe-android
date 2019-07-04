@@ -2,8 +2,11 @@ package ar.gob.jiaac.flysafe.models;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import ar.gob.jiaac.flysafe.R;
 
+@SuppressWarnings("WeakerAccess")
 public class AircraftType {
     static public final AircraftType UNKNOWN = new AircraftType(0, "Unknown");
     static public final AircraftType AIRPLANE = new AircraftType(1, "Airplane");
@@ -58,5 +61,6 @@ public class AircraftType {
         this.name = name;
     }
 
+    @NonNull
     public String toString() { return name; }
 }
