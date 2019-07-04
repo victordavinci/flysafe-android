@@ -46,6 +46,7 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
     private DrawerLayout drawerLayout;
     private NavigationView nv;
 
+    /*Compatibilidad con Android 4.2*/
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
@@ -64,18 +65,19 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
         }
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
+       //Compatibilidad Android anteriores
         setSupportActionBar(toolbar);
-
+        //Menu Lateral
         drawerLayout = findViewById(R.id.drawer_layout);
         nv = findViewById(R.id.nav_view);
-
+        //Menu Hamburguesa superior izquierda
         final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
         nv.setNavigationItemSelectedListener(this);
-
+        //Boton Back Menu
         getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
             @Override
             public void onBackStackChanged() {
@@ -90,6 +92,7 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
                             }
                         });
                     } else {
+                        // si el contador es 0 desactivo el boton Back y muestro la hamburguesa
                         actionBar.setDisplayHomeAsUpEnabled(false);
                         toggle.syncState();
                         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -113,7 +116,7 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
                 }
             });
         }
-
+        //actualizar menu
         supportInvalidateOptionsMenu();
     }
 
@@ -237,10 +240,12 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
 
     @Override
     public void onBackPressed() {
+        //si presiono el boton back de android
         if (drawerLayout != null && drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
             return;
         }
+        //android maneja el boton
         super.onBackPressed();
     }
 
