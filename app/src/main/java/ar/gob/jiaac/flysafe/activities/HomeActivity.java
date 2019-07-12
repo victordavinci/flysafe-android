@@ -32,6 +32,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import ar.gob.jiaac.flysafe.R;
+import ar.gob.jiaac.flysafe.fragments.AccountFragment;
 import ar.gob.jiaac.flysafe.fragments.HelpFragment;
 import ar.gob.jiaac.flysafe.fragments.HomeFragment;
 import ar.gob.jiaac.flysafe.fragments.MainMenuFragment;
@@ -162,9 +163,9 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(getApplicationContext(), "Se ha enviado un email a su casilla de correo", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.email_sent), Toast.LENGTH_LONG).show();
                             } else {
-                                Toast.makeText(getApplicationContext(), "Error al enviar correo de verificación, intente de nuevo", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.email_error), Toast.LENGTH_LONG).show();
                             }
                             FirebaseAuth.getInstance().signOut();
                             finish();
@@ -214,6 +215,9 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFr
                                 finish();
                             }
                         });
+                break;
+            case R.id.account_item:
+                replaceFragment(new AccountFragment(), true);
                 break;
             default:
                 return super.onOptionsItemSelected(item);

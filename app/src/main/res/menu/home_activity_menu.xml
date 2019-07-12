@@ -3,14 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/logout_item"
-        android:orderInCategory="97"
+        android:orderInCategory="96"
         app:showAsAction="never"
         android:title="@string/Logout" />
     <item
         android:id="@+id/help_item"
-        android:orderInCategory="98"
+        android:orderInCategory="97"
         app:showAsAction="never"
         android:title="@string/Help" />
+    <item
+        android:id="@+id/account_item"
+        android:orderInCategory="98"
+        app:showAsAction="never"
+        android:title="@string/account" />
     <item
         android:id="@+id/exit_item"
         android:orderInCategory="99"

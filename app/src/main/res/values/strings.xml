@@ -106,4 +106,15 @@ Neither party (SUPPLIER, USER and / or User) will acquire any right over any com
     <string name="reject">Reject</string>
     <string name="faq">FAQ</string>
     <string name="faqs">FAQ</string>
+    <string name="account">Account</string>
+    <string name="account_data">Account data</string>
+    <string name="user_name">User name:</string>
+    <string name="user_type">User type:</string>
+    <string name="user_standard">Standard</string>
+    <string name="delete_account">Delete account</string>
+    <string name="account_deleted">Your account has been deleted</string>
+    <string name="email_sent">An email has been sent to your inbox</string>
+    <string name="email_error">Error sending the verification mail, try again later</string>
+    <string name="delete_acount_mbox">Delete account</string>
+    <string name="delete_account_q_mbox">Reauthentication is required to delete your account. Do you want to delete it?</string>
 </resources>

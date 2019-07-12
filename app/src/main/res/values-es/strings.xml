@@ -115,4 +115,15 @@ Ninguna de las partes (PROVEEDOR, USUARIO y/o Usuario) adquirirá ningún derech
 4. Mi reporte no fue validado. ¿Por qué?\n
  &#8226; Los reportes son evaluados, si no encuadran en un suceso de aviación, no será válido.\n
 </string>
+    <string name="account">Cuenta</string>
+    <string name="account_data">Datos de la cuenta</string>
+    <string name="user_name">Usuario:</string>
+    <string name="user_type">Tipo de usuario:</string>
+    <string name="user_standard">Estándar</string>
+    <string name="delete_account">Eliminar cuenta</string>
+    <string name="account_deleted">Su cuenta ha sido borrada</string>
+    <string name="email_sent">Se ha enviado un email a su casilla de correo</string>
+    <string name="email_error">Error al enviar correo de verificación, intente de nuevo</string>
+    <string name="delete_acount_mbox">Eliminar cuenta</string>
+    <string name="delete_account_q_mbox">Se requiere reautenticación para eliminar su cuenta ¿Quiere eliminarla?</string>
 </resources>
