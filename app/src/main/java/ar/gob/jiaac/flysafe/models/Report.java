@@ -9,6 +9,7 @@ import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.IgnoreExtraProperties;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,7 +21,7 @@ import java.util.Objects;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
 @IgnoreExtraProperties
-public class Report {
+public class Report implements Serializable {
     @Exclude
     private String id;
     private Date date;
@@ -34,9 +35,7 @@ public class Report {
     private Double lng = 0.0;
 
     @Exclude
-    private final DatabaseReference reportsRef = FirebaseDatabase.getInstance().getReference("reports");
-    @Exclude
-    private DatabaseReference stats = FirebaseDatabase.getInstance().getReference("stats");
+    static private final DatabaseReference reportsRef = FirebaseDatabase.getInstance().getReference("reports");
 
     @Override
     public boolean equals(Object o) {

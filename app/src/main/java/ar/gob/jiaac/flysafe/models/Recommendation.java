@@ -4,13 +4,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import ar.gob.jiaac.flysafe.utils.DateUtils;
 
 @SuppressWarnings({"WeakerAccess", "unused"})
 @IgnoreExtraProperties
-public class Recommendation {
+public class Recommendation implements Serializable {
     @Exclude
     private String id;
     private Date date;

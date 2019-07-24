@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.google.firebase.database.DataSnapshot;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
@@ -13,7 +14,7 @@ import ar.gob.jiaac.flysafe.R;
 import ar.gob.jiaac.flysafe.utils.DateUtils;
 
 @SuppressWarnings("WeakerAccess")
-public class Notification {
+public class Notification implements Serializable {
     private String id;
     private String aircrafts;
     private Date date;

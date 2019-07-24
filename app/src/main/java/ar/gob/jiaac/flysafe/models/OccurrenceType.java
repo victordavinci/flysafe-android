@@ -4,10 +4,12 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
+
 import ar.gob.jiaac.flysafe.R;
 
 @SuppressWarnings("WeakerAccess")
-public class OccurrenceType {
+public class OccurrenceType implements Serializable {
     static public final OccurrenceType UNKNOWN = new OccurrenceType(0, "Unknown");
     static public final OccurrenceType ACCIDENT = new OccurrenceType(1, "Accident");
     static public final OccurrenceType INCIDENT = new OccurrenceType(2, "Incident");

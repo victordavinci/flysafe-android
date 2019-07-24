@@ -4,10 +4,12 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
+
 import ar.gob.jiaac.flysafe.R;
 
 @SuppressWarnings("WeakerAccess")
-public class AircraftType {
+public class AircraftType implements Serializable {
     static public final AircraftType UNKNOWN = new AircraftType(0, "Unknown");
     static public final AircraftType AIRPLANE = new AircraftType(1, "Airplane");
     static public final AircraftType HELICOPTER = new AircraftType(2, "Helicopter");
