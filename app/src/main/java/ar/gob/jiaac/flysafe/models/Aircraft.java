@@ -25,7 +25,7 @@ public class Aircraft implements Serializable {
         a.setRegistration(ds.getKey());
         DataSnapshot t = ds.child("type");
         if (t.getValue() != null) {
-            a.setType(AircraftType.fromLong(ctx, (Long) t.getValue()));
+            a.setType(AircraftType.fromLong(ctx, ((Number) t.getValue()).longValue()));
         }
         return a;
     }

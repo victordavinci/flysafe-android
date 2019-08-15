@@ -57,7 +57,7 @@ public class Report implements Serializable {
         r.setDateFromString((String) ds.child("date").getValue());
         Object type = ds.child("type").getValue();
         if (type != null) {
-            r.setOccurrenceType(OccurrenceType.fromLong(ctx, (Long) type));
+            r.setOccurrenceType(OccurrenceType.fromLong(ctx, ((Number) type).longValue()));
         }
         DataSnapshot aircrafts = ds.child("aircrafts");
         if (aircrafts.getValue() != null) {
@@ -67,10 +67,10 @@ public class Report implements Serializable {
         }
         r.setUser((String) ds.child("user").getValue());
         r.setNarrative((String) ds.child("narrative").getValue());
-        r.setValidated((Long) ds.child("validated").getValue());
+        r.setValidated(ds.child("validated").getValue() != null ? ((Number) ds.child("validated").getValue()).longValue() : null);
         r.setLocation((String) ds.child("location").getValue());
-        r.setLat((Double) ds.child("lat").getValue());
-        r.setLng((Double) ds.child("lng").getValue());
+        r.setLat(ds.child("lat").getValue() != null ? ((Number) ds.child("lat").getValue()).doubleValue() : null);
+        r.setLng(ds.child("lng").getValue() != null ? ((Number) ds.child("lng").getValue()).doubleValue() : null);
         return r;
     }
 

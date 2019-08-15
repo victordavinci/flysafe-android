@@ -52,12 +52,12 @@ public class Notification implements Serializable {
         Notification r = new Notification(ctx);
         r.setId(ds.getKey());
         r.setAircrafts((String) ds.child("aircrafts").getValue());
-        Long ldate = (Long) ds.child("date").getValue();
+        Long ldate = ds.child("date").getValue() != null ? ((Number) ds.child("date").getValue()).longValue() : null;
         if (ldate != null) {
             r.setDate(new Date(ldate));
         }
-        r.setNewValue((Long) ds.child("newValue").getValue());
-        r.setOldValue((Long) ds.child("oldValue").getValue());
+        r.setNewValue(ds.child("newValue").getValue() != null ? ((Number) ds.child("newValue").getValue()).longValue() : null);
+        r.setOldValue(ds.child("oldValue").getValue() != null ? ((Number) ds.child("oldValue").getValue()).longValue() : null);
         r.setReport((String) ds.child("report").getValue());
         r.setReportDate(DateUtils.dateFromString((String) ds.child("reportDate").getValue()));
         r.setUser((String) ds.child("user").getValue());
