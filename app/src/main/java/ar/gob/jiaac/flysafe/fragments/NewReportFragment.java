@@ -2,6 +2,7 @@ package ar.gob.jiaac.flysafe.fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -31,6 +33,7 @@ import com.google.android.libraries.places.compat.ui.PlacePicker;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Objects;
 
 import ar.gob.jiaac.flysafe.R;
@@ -45,6 +48,7 @@ public class NewReportFragment extends Fragment {
     private static final int NEW_AIRCRAFT_REQUEST_CODE = 1;
     private static final int PLACE_PICKER_REQUEST = 2;
 
+    private DatePickerDialog picker;
     private EditText editDate;
     private EditText editNarrative;
     private Spinner spinnerType;
@@ -112,6 +116,21 @@ public class NewReportFragment extends Fragment {
         if (context != null) {
             spinnerType.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_dropdown_item, occurrenceTypes));
             aircraftList.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, aircrafts));
+        }
+        if (editDate != null) {
+            editDate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final Calendar cldr = Calendar.getInstance();
+                    picker = new DatePickerDialog(NewReportFragment.this.getActivity(), new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                            editDate.setText(String.format("%04d", year) + "-" + String.format("%02d", month) + "-" + String.format("%02d", day));
+                        }
+                    }, cldr.get(Calendar.YEAR), cldr.get(Calendar.MONTH), cldr.get(Calendar.DAY_OF_MONTH));
+                    picker.show();
+                }
+            });
         }
         aircraftList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

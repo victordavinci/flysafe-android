@@ -67,7 +67,7 @@
     <string name="postal">Postal: Av. Corrientes 2037 CABA</string>
     <string name="phone">Phone: <a href="tel:1121795054">1121795054</a></string>
     <string name="help">Help</string>
-    <string name="version">Version: 1.4 (jul 2019)</string>
+    <string name="version">Version: 1.4.1 (dec 2019)</string>
     <string name="user_manual">User manual: <a href="https://goo.gl/HCgwd1">Link</a></string>
     <string name="installation_manual">Installation manual: <a href="https://goo.gl/HCgwd1">Link</a></string>
     <string name="title_activity_terms_and_conditions">Terms and conditions</string>
