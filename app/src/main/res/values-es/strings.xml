@@ -126,4 +126,5 @@ Ninguna de las partes (PROVEEDOR, USUARIO y/o Usuario) adquirirá ningún derech
     <string name="email_error">Error al enviar correo de verificación, intente de nuevo</string>
     <string name="delete_acount_mbox">Eliminar cuenta</string>
     <string name="delete_account_q_mbox">Se requiere reautenticación para eliminar su cuenta ¿Quiere eliminarla?</string>
+    <string name="user_admin">Administrador</string>
 </resources>

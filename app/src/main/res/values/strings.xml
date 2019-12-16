@@ -126,4 +126,5 @@ Neither party (SUPPLIER, USER and / or User) will acquire any right over any com
     <string name="email_error">Error sending the verification mail, try again later</string>
     <string name="delete_acount_mbox">Delete account</string>
     <string name="delete_account_q_mbox">Reauthentication is required to delete your account. Do you want to delete it?</string>
+    <string name="user_admin">Administrator</string>
 </resources>

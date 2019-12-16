@@ -13,12 +13,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,8 +43,22 @@ public class AccountFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_account, container, false);
         TextView accountName = v.findViewById(R.id.textAccountName);
+        final TextView userType = v.findViewById(R.id.userType);
         String user = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         accountName.setText(user);
+        FirebaseDatabase.getInstance().getReference("/admins/" + FirebaseAuth.getInstance().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists() && dataSnapshot.getValue() != null && dataSnapshot.getValue() instanceof Boolean && (Boolean) dataSnapshot.getValue()) {
+                    userType.setText(R.string.user_admin);
+                } else {
+                    userType.setText(R.string.user_standard);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
         Button deleteAccount = v.findViewById(R.id.buttonDeleteAccount);
         deleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
