@@ -65,7 +65,7 @@ public class Notification implements Serializable {
     }
 
     public String getNotificationText() {
-        if (getAircrafts() == null || getNewValue() == null) return "";
+        if (ctx == null || getAircrafts() == null || getNewValue() == null) return "";
         StringBuilder sb = new StringBuilder();
         sb.append(ctx.getString(R.string.YourReportFrom)).append(DateUtils.dateToString(getDate()));
         if (getAircrafts().length() > 0) {
